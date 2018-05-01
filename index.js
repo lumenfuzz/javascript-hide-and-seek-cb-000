@@ -18,14 +18,32 @@ function deepestChild() {
 }
 
 function increaseRankBy(n) {
-  var lists = document.querySelectorAll('.ranked-list')
+
+  const rankedLists = document.querySelectorAll('.ranked-list')
+  const firstList = rankedLists[0]
+  const secondList = rankedLists[1]
+
+  let children = firstList.children
+  let start = 1
+  for (let i = 0, l = children.length; i < l; i++) {
+    parseInt(children[i].innerHTML) = start + i + 3
+  }
+
+  children = secondList.children
+  start = 12
+
+  for (let i = 0, l = children.length; i < l; i++) {
+    parseInt(children[i].innerHTML) = start - i + 3
+  }
+
+  /* var lists = document.querySelectorAll('.ranked-list')
   var childList
   for (var i = 0; i < lists.length; i++) {
     childList = lists[i]
     for (var j = 0; j < childList.length; j++) {
       childList[i].innerHTML = (parseInt(childList[i].innerHTML) + n)
     }
-  }
+  } */
   // let rank = 1
   // rank += n
   // return rank
