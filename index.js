@@ -26,14 +26,14 @@ function increaseRankBy(n) {
   let children = firstList.children
   let start = 1
   for (let i = 0, l = children.length; i < l; i++) {
-    children[i].innerHTML = start + i + 3
+    children[i].innerHTML = start + i + n
   }
 
   children = secondList.children
   start = 12
 
   for (let i = 0, l = children.length; i < l; i++) {
-    children[i].innerHTML = start - i + 3
+    children[i].innerHTML = start - i + n
   }
 
   /* var lists = document.querySelectorAll('.ranked-list')
